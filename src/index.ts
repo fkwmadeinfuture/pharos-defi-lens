@@ -1,3 +1,13 @@
+import { setGlobalDispatcher, ProxyAgent } from "undici";
+
+const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || "http://127.0.0.1:7892";
+try {
+  setGlobalDispatcher(new ProxyAgent(proxyUrl));
+  process.stderr.write(`[pharos] Global proxy set to ${proxyUrl}\n`);
+} catch (e: any) {
+  process.stderr.write(`[pharos] Failed to set proxy: ${e.message}\n`);
+}
+
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
