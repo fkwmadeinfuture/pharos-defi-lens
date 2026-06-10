@@ -1,0 +1,36 @@
+{
+  "name": "pharos-defi-lens",
+  "version": "1.0.0",
+  "description": "DeFi Price Intelligence Agent Skill for Pharos Network — an MCP Server providing multi-source DeFi analytics",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "build": "tsup src/index.ts --format esm --dts",
+    "dev": "tsx watch src/index.ts"
+  },
+  "keywords": [
+    "pharos",
+    "defi",
+    "mcp",
+    "agent-skill",
+    "ai-agent",
+    "blockchain",
+    "web3"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.5.0",
+    "viem": "^2.23.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "tsup": "^8.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
